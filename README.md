@@ -4,8 +4,28 @@ The Fukushima Inverse Problem
 
 This code and all associated files are the supplementary material to the paper
 M. Martinez-Camara, I. Dokmani\'{c}, J. Ranieri, R. Scheibler, M. Vetterli, and A. Stohl,
-The Fukushima inverse problem, ICASSP 2013, Vancouver, 2013.
+__The Fukushima inverse problem__, ICASSP 2013, Vancouver, 2013.
 
+The original paper is available [online](http://infoscience.epfl.ch/record/182697/files/icassp.pdf?version=2)
+and attacks the problem of estimating the magnitude and timing of radioactive release
+at the Fukushima Dai-Ichi power plant during the accident in March 2011.
+
+Abstract
+--------
+
+Knowing what amount of radioactive material was released from Fukushima in
+March 2011 is crucial to understand the scope of the consequences. Moreover, it
+could be used in forward simulations to obtain accurate maps of deposition. But
+these data are often not publicly available, or are of questionable quality. We
+propose to estimate the emission waveforms by solving an inverse problem.
+Previous approaches rely on a detailed expert guess of how the releases
+appeared, and they produce a solution strongly biased by this guess.  If we
+plant a nonexistent peak in the guess, the solution also exhibits a nonexistent
+peak. We propose a method based on sparse regularization that solves the
+Fukushima inverse problem blindly. Together with the atmospheric dispersion
+models and worldwide radioactivity measurements our method correctly
+reconstructs the times of major events during the accident, and gives plausible
+estimates of the released quantities of Xenon.
 
 Contact
 -------
