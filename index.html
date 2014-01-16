@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>The Fukushima Inverse Problem by LCAV</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>The Fukushima Inverse Problem</h1>
+        <p>The Fukushima inverse problem. Code and data to compute emissions of radioactive material at the Fukushima Dai-Ichi power plant during the Great Tohoku Earthquake of 3/11 2011. This code allows to reproduce results published at ICASSP 2013.</p>
+
+        <p class="view"><a href="https://github.com/LCAV/FukushimaInverse-ICASSP2013">View the Project on GitHub <small>LCAV/FukushimaInverse-ICASSP2013</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/LCAV/FukushimaInverse-ICASSP2013/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/LCAV/FukushimaInverse-ICASSP2013/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/LCAV/FukushimaInverse-ICASSP2013">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>This code and all associated files are the supplementary material to the paper
+M. Martinez-Camara, I. Dokmani\'{c}, J. Ranieri, R. Scheibler, M. Vetterli, and A. Stohl,
+<strong>The Fukushima inverse problem</strong>, ICASSP 2013, Vancouver, 2013.</p>
+
+<p>The original paper is available <a href="http://infoscience.epfl.ch/record/182697/files/icassp.pdf?version=2">online</a>
+and attacks the problem of estimating the magnitude and timing of radioactive release
+at the Fukushima Dai-Ichi power plant during the accident in March 2011.</p>
+
+<h2>
+<a name="abstract" class="anchor" href="#abstract"><span class="octicon octicon-link"></span></a>Abstract</h2>
+
+<p>Knowing what amount of radioactive material was released from Fukushima in
+March 2011 is crucial to understand the scope of the consequences. Moreover, it
+could be used in forward simulations to obtain accurate maps of deposition. But
+these data are often not publicly available, or are of questionable quality. We
+propose to estimate the emission waveforms by solving an inverse problem.
+Previous approaches rely on a detailed expert guess of how the releases
+appeared, and they produce a solution strongly biased by this guess.  If we
+plant a nonexistent peak in the guess, the solution also exhibits a nonexistent
+peak. We propose a method based on sparse regularization that solves the
+Fukushima inverse problem blindly. Together with the atmospheric dispersion
+models and worldwide radioactivity measurements our method correctly
+reconstructs the times of major events during the accident, and gives plausible
+estimates of the released quantities of Xenon.</p>
+
+<h2>
+<a name="contact" class="anchor" href="#contact"><span class="octicon octicon-link"></span></a>Contact</h2>
+
+<p>Do not hesitate to contact us if you have any questions or would
+like some help running this code!</p>
+
+<p>Marta Martinez-Camara
+EPFL-IC-LCAV
+BC Building, Station 14
+1015 Lausanne, Switzerland</p>
+
+<p><a href="mailto:marta.martinez-camara@epfl.ch">marta.martinez-camara@epfl.ch</a></p>
+
+<h2>
+<a name="abstract-1" class="anchor" href="#abstract-1"><span class="octicon octicon-link"></span></a>Abstract</h2>
+
+<p>Knowing what amount of radioactive material was released from Fukushima in
+March 2011 is crucial to understand the scope of the consequences. Moreover, it
+could be used in forward simulations to obtain accurate maps of deposition. But
+these data are often not publicly available, or are of questionable quality. We
+propose to estimate the emission waveforms by solving an inverse problem.
+Previous approaches rely on a detailed expert guess of how the releases
+appeared, and they produce a solution strongly biased by this guess. If we
+plant a nonexistent peak in the guess, the solution also exhibits a nonexistent
+peak. We propose a method based on sparse regularization that solves the
+Fukushima inverse problem blindly. Together with the atmospheric dispersion
+models and worldwide radioactivity measurements our method correctly
+reconstructs the times of major events during the accident, and gives
+plausible estimates of the released quantities of Xenon.</p>
+
+<h2>
+<a name="reproduce" class="anchor" href="#reproduce"><span class="octicon octicon-link"></span></a>Reproduce</h2>
+
+<h3>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h3>
+
+<ul>
+<li>MATLAB (We used version 2012b)</li>
+<li>CVX    (Available from: <a href="http://cvxr.com/cvx/">http://cvxr.com/cvx/</a>)</li>
+</ul><h3>
+<a name="settings" class="anchor" href="#settings"><span class="octicon octicon-link"></span></a>Settings</h3>
+
+<ul>
+<li><p>If necessary, the location of the CVX installation directory
+can be changed directly in makeFigures.m</p></li>
+<li><p>All the parameters of the algorithms and simulations are described
+in a detailed fashion in the comments in <code>makeFigures.m</code>.
+If you need more detail, do not hesitate to contact us.</p></li>
+</ul><h3>
+<a name="re-create-figures-from-the-paper" class="anchor" href="#re-create-figures-from-the-paper"><span class="octicon octicon-link"></span></a>Re-create figures from the paper</h3>
+
+<p>To recreate all four figures from the paper, follow these steps.</p>
+
+<ol>
+<li>Open MATLAB</li>
+<li>Navigate to directory folder containing this README.txt</li>
+<li>Run <code>makeFigures</code>
+</li>
+<li>Wait</li>
+</ol><p>Note: We could unfortunately not release the exact position of the
+CTBTO stations. As a consequence, figure 2C is omitted.</p>
+
+<h3>
+<a name="software-files" class="anchor" href="#software-files"><span class="octicon octicon-link"></span></a>Software files</h3>
+
+<ul>
+<li><p>matrixCleaning.m: 
+Reduce the transport matrix until a given condition number is obtained.</p></li>
+<li><p>reconstructFromSyntheticData_Xe.m: 
+Simulate reconstruction error for synthetic data for different reconstruction
+algorithm.</p></li>
+<li><p>reconstructSourceL1Pos.m: 
+Reconstruct the emission source using L1 minimization with positivity
+constraints.</p></li>
+<li><p>opt_routines: 
+Directory containing all the optimization routines we use.</p></li>
+</ul><h3>
+<a name="data-files" class="anchor" href="#data-files"><span class="octicon octicon-link"></span></a>Data files</h3>
+
+<ul>
+<li><p>Data/matrixGFSXe.mat   : the transport matrix</p></li>
+<li><p>Data/measXe.mat        : the measurement vector</p></li>
+<li><p>Data/aPrioriSource.mat : the a priori source used in [1]</p></li>
+</ul><h2>
+<a name="errata-and-caveats" class="anchor" href="#errata-and-caveats"><span class="octicon octicon-link"></span></a>Errata and caveats</h2>
+
+<ul>
+<li><p>The scale of the y-axis of Figure 1. as published in the ICASSP proceedings
+is wrong. The version of the paper in this repository contains the correct
+figure. This code also produces the correct figure.</p></li>
+<li><p>The exact lambda and epsilon parameters used to produce figure 1. were
+unfortunately not recorded when creating the figure for the paper.
+This code contains parameters producing an equally illustrative figure.</p></li>
+<li><p>In figure 4. of the paper published in the ICASSP proceedings, the emissions
+for 0m-50m and 300m-1000m were mistakenly shifted to the right by 5 ticks.
+Their magnitude was however correct.
+The version of the paper in this repository contains the correct figure. This
+code also produces the correct figure.</p></li>
+<li><p>The seeds of the random number generator experiments were unfortunately
+not recorded when running the synthetic experiments.</p></li>
+</ul><h2>
+<a name="reference" class="anchor" href="#reference"><span class="octicon octicon-link"></span></a>Reference</h2>
+
+<p>[1] A. Stohl, P. Seibert, G. Wotawa, D. Arnold, J. F. Burkhart, S. Eckhardt, C.
+    Tapia, A. Vargas, and T. J. Yasunari, “Xenon- 133 and caesium-137 releases into
+    the atmosphere from the Fukushima Dai-ichi nuclear power plant: determination
+    of the source term, atmospheric dispersion, and deposition,” Atmos. Chem.
+    Phys., vol. 12, no. 5, pp. 2313–2343, 2012.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>2013-2014 (c) M. Martinez-Camara, I. Dokmani\'{c}, J. Ranieri, R. Scheibler, M. Vetterli, and A. Stohl,
+All the code is published under a CC-BY-SA 3.0 License
+For details about the license, refer to <a href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a></p>
+
+<ul>
+<li>For attribution of non-commercial reuse of this work, a similar notice to this one is sufficient</li>
+<li>For attribution of commercial reuse of this work, please contact us.</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/LCAV">LCAV</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
