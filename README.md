@@ -41,24 +41,6 @@ BC Building, Station 14
 marta.martinez-camara@epfl.ch
 
 
-Abstract
---------
-
-Knowing what amount of radioactive material was released from Fukushima in
-March 2011 is crucial to understand the scope of the consequences. Moreover, it
-could be used in forward simulations to obtain accurate maps of deposition. But
-these data are often not publicly available, or are of questionable quality. We
-propose to estimate the emission waveforms by solving an inverse problem.
-Previous approaches rely on a detailed expert guess of how the releases
-appeared, and they produce a solution strongly biased by this guess. If we
-plant a nonexistent peak in the guess, the solution also exhibits a nonexistent
-peak. We propose a method based on sparse regularization that solves the
-Fukushima inverse problem blindly. Together with the atmospheric dispersion
-models and worldwide radioactivity measurements our method correctly
-reconstructs the times of major events during the accident, and gives
-plausible estimates of the released quantities of Xenon.
-
-
 Reproduce
 ---------
 
